@@ -1,94 +1,40 @@
-  >>> add_integer(2)
-    100
+===========================
+How to Use 0-add_integer.py
+===========================
 
-Test Case 5: (float, default)
+This module defines an integer addition function ``add_integer(a, b=98)``.
+``add_integer(...)``` returns the addition of its two arguments. For numbers,
+that value is equivalent to using the ``+`` operator.
 
-    >>> add_integer(2.3)
-    100
+::
 
-Negative Numbers:
-=================
+    >>> add_integer = __import__('0-add_integer').add_integer
+    >>> add_integer(2, 3)
+    5
 
-Test Case 6: (int, int)
+::
 
-    >>> add_integer(-2, -3)
-    -5
+    >>> add_integer(2, -3)
+    -1
 
-Test Case 7: (float, float)
+The function also works with floating-point values.
 
-    >>> add_integer(-2.3, -0.2)
-    -2
+::
 
-Test Case 8: (int, float)
+    >>> add_integer(2.0, 3.0)
+    5
 
-    >>> add_integer(-2, -3.2)
-    -5
+Note that floats are casted to ints before addition is performed.
 
-Test Case 9: (int, default)
+::
 
-    >>> add_integer(-2)
-    96
+    >>> add_integer(2.9, 0.2)
+    2
 
-Test Case 10: (float, default)
+Floating and non-floating point values can be combined.
 
-    >>> add_integer(-2.3)
-    96
+::
 
-Error Cases:
-===========
+    >>> add_integer(2.3, -3)
+    -1
 
-Test Case 11 : (int, "foo")
-
-    >>> add_integer(2, "foo")
-    Traceback (most recent call last):
-        ...
-    TypeError: b must be an integer
-
-Test Case 12: ("foo", default)
-
-    >>> add_integer("foo")
-    Traceback (most recent call last):
-        ...
-    TypeError: a must be an integer
-
-Test Case 12: (None, None)
-
-    >>> add_integer(None, None)
-    Traceback (most recent call last):
-        ...
-    TypeError: a must be an integer
-
-Test Case 13 (int, float('inf'))
-
-    >>> add_integer(2, float('inf'))
-    Traceback (most recent call last):
-       ...
-    OverflowError: cannot convert float infinity to integer
-
-Test Case 14: (float('inf'), default)
-
-    >>> add_integer(float('inf'))
-    Traceback (most recent call last):
-        ...
-    OverflowError: cannot convert float infinity to integer
-
-Test Case 15: (int, float('nan'))
-
-    >>> add_integer(2, float('nan'))
-    Traceback (most recent call last):
-        ...
-    ValueError: cannot convert float NaN to integer
-
-Test Case 16: (float('nan'), default)
-
-    >>> add_integer(float('nan'))
-    Traceback (most recent call last):
-        ...
-    ValueError: cannot convert float NaN to integer
-
-Test Case 17: (default)
-    
-    >>> add_integer()
-    Traceback (most recent call last):
-    ...
-    TypeError: add_integer() missing 1 required positional argument: 'a'
