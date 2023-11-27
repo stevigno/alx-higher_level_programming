@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 """
-Module: 7-rectangle.py
-Contains class Rectangle
-with private attribute width and height
+7-rectangle.py
 """
 
 
